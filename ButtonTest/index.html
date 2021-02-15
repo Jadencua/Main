@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Quote Gen</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Quote Generator</h1>
+
+    <form onsubmit="return guardarNumeros()">
+ <p>Please insert Quote</p>
+ <input type="text" id="box">
+ <input type="submit" value="Submit">
+</form>
+
+<br>
+<br>
+    <button onclick="newQuote()">New Quote</button>
+
+
+<br>
+<br>
+
+    <div id="quoteDisplay">
+    </div>    
+    <script src="script.js"></script>
+  </body>
+</html>
