@@ -6,7 +6,7 @@ function newQuote(){
 }
 
 function guardarNumeros(){
- boxvalue = document.getElementById('box').value;
+ var boxvalue = document.getElementById('box').value;
  quotes.push(boxvalue);  
  console.log(quotes);
  return false;
