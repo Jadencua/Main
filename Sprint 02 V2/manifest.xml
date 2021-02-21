@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-  <Id>50942f61-5e10-46ed-aa62-dc75ac9361bb</Id>
+  <Id>0f9bc882-e868-48b4-b28c-2dc1e010b1f1</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Contoso</ProviderName>
+  <ProviderName>Runtime Terror</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Git the gist"/>
+  <DisplayName DefaultValue="Sprint 02 V2"/>
   <Description DefaultValue="Allows users to access their GitHub gists."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
@@ -41,53 +41,17 @@
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
-        <!-- Message Compose -->
-        <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-          <OfficeTab id="TabDefault">
-            <Group id="msgComposeCmdGroup">
-              <Label resid="GroupLabel"/>
-              <Control xsi:type="Button" id="msgComposeInsertGist">
-                <Label resid="TaskpaneButton.Label"/>
-                <Supertip>
-                  <Title resid="TaskpaneButton.Title"/>
-                  <Description resid="TaskpaneButton.Tooltip"/>
-                </Supertip>
-                <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
-                  <bt:Image size="32" resid="Icon.32x32"/>
-                  <bt:Image size="80" resid="Icon.80x80"/>
-                </Icon>
-                <Action xsi:type="ShowTaskpane">
-                  <SourceLocation resid="Taskpane.Url"/>
-                </Action>
-              </Control>
-              <Control xsi:type="Button" id="msgComposeInsertDefaultGist">
-                <Label resid="FunctionButton.Label"/>
-                <Supertip>
-                  <Title resid="FunctionButton.Title"/>
-                  <Description resid="FunctionButton.Tooltip"/>
-                </Supertip>
-                <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
-                  <bt:Image size="32" resid="Icon.32x32"/>
-                  <bt:Image size="80" resid="Icon.80x80"/>
-                </Icon>
-                <Action xsi:type="ExecuteFunction">
-                  <FunctionName>insertDefaultGist</FunctionName>
-                </Action>
-              </Control>
-            </Group>
-          </OfficeTab>
-        </ExtensionPoint>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url"/>
+          <!-- Message Compose -->
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="msgReadGroup">
+              <Group id="msgComposeCmdGroup">
                 <Label resid="GroupLabel"/>
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                <Control xsi:type="Button" id="msgComposeInsertGist">
                   <Label resid="TaskpaneButton.Label"/>
                   <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
+                   <Title resid="TaskpaneButton.Title"/>
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
@@ -99,48 +63,48 @@
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
-                <Control xsi:type="Button" id="ActionButton">
-                  <Label resid="ActionButton.Label"/>
+                <Control xsi:type="Button" id="msgComposeInsertDefaultGist">
+                  <Label resid="FunctionButton.Label"/>
                   <Supertip>
-                    <Title resid="ActionButton.Label"/>
-                    <Description resid="ActionButton.Tooltip"/>
+                    <Title resid="FunctionButton.Title"/>
+                   <Description resid="FunctionButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
+                   <bt:Image size="16" resid="Icon.16x16"/>
                     <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>action</FunctionName>
-                  </Action>
-                </Control>
+                   <bt:Image size="80" resid="Icon.80x80"/>
+                 </Icon>
+                 <Action xsi:type="ExecuteFunction">
+                   <FunctionName>insertDefaultGist</FunctionName>
+                 </Action>
+               </Control>
               </Group>
             </OfficeTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
-  <Resources>
-    <bt:Images>
-      <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-      <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-      <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-    </bt:Images>
-    <bt:Urls>
-      <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-      <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-    </bt:Urls>
-    <bt:ShortStrings>
-      <bt:String id="GroupLabel" DefaultValue="Git the gist"/>
-      <bt:String id="TaskpaneButton.Label" DefaultValue="Insert gist"/>
-      <bt:String id="TaskpaneButton.Title" DefaultValue="Insert gist"/>
-      <bt:String id="FunctionButton.Label" DefaultValue="Insert default gist"/>
-      <bt:String id="FunctionButton.Title" DefaultValue="Insert default gist"/>
-    </bt:ShortStrings>
-    <bt:LongStrings>
-      <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Displays a list of your gists and allows you to insert their contents into the current message."/>
-      <bt:String id="FunctionButton.Tooltip" DefaultValue="Inserts the content of the gist you mark as default into the current message."/>
-    </bt:LongStrings>
-  </Resources>
+    <Resources>
+      <bt:Images>
+       <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+       <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+       <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+     </bt:Images>
+      <bt:Urls>
+       <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GroupLabel" DefaultValue="Git the gist"/>
+       <bt:String id="TaskpaneButton.Label" DefaultValue="Insert gist"/>
+        <bt:String id="TaskpaneButton.Title" DefaultValue="Insert gist"/>
+       <bt:String id="FunctionButton.Label" DefaultValue="Insert default gist"/>
+       <bt:String id="FunctionButton.Title" DefaultValue="Insert default gist"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Displays a list of your gists and allows you to insert their contents into the current message."/>
+       <bt:String id="FunctionButton.Tooltip" DefaultValue="Inserts the content of the gist you mark as default into the current message."/>
+      </bt:LongStrings>
+    </Resources>
   </VersionOverrides>
 </OfficeApp>
