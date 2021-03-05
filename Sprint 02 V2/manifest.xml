@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+<<<<<<< HEAD
   <Id>8c1d2773-39b4-489d-b184-7708f4b5ccff</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>HBerry Team LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="My Signatures"/>
   <Description DefaultValue="Allows users to select a signature."/>
+=======
+  <Id>0f9bc882-e868-48b4-b28c-2dc1e010b1f1</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Runtime Terror</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Sprint 02 V2"/>
+  <Description DefaultValue="Allows users to access their GitHub gists."/>
+>>>>>>> c8dd8dfbd19e2a611cad0502f28b417d737a22de
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
@@ -44,6 +53,7 @@
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url"/>
           <!-- Message Compose -->
+<<<<<<< HEAD
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
     <Group id="msgComposeCmdGroup">
@@ -81,10 +91,50 @@
     </Group>
   </OfficeTab>
 </ExtensionPoint>
+=======
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgComposeCmdGroup">
+                <Label resid="GroupLabel"/>
+                <Control xsi:type="Button" id="msgComposeInsertGist">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                   <Title resid="TaskpaneButton.Title"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="msgComposeInsertDefaultGist">
+                  <Label resid="FunctionButton.Label"/>
+                  <Supertip>
+                    <Title resid="FunctionButton.Title"/>
+                   <Description resid="FunctionButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                   <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                   <bt:Image size="80" resid="Icon.80x80"/>
+                 </Icon>
+                 <Action xsi:type="ExecuteFunction">
+                   <FunctionName>insertDefaultGist</FunctionName>
+                 </Action>
+               </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+>>>>>>> c8dd8dfbd19e2a611cad0502f28b417d737a22de
         </DesktopFormFactor>
       </Host>
     </Hosts>
     <Resources>
+<<<<<<< HEAD
   <bt:Images>
     <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
     <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
@@ -106,5 +156,28 @@
     <bt:String id="FunctionButton.Tooltip" DefaultValue="Inserts the content of the gist you mark as default into the current message."/>
   </bt:LongStrings>
 </Resources>
+=======
+      <bt:Images>
+       <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+       <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+       <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+     </bt:Images>
+      <bt:Urls>
+       <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GroupLabel" DefaultValue="Git the gist"/>
+       <bt:String id="TaskpaneButton.Label" DefaultValue="Insert gist"/>
+        <bt:String id="TaskpaneButton.Title" DefaultValue="Insert gist"/>
+       <bt:String id="FunctionButton.Label" DefaultValue="Insert default gist"/>
+       <bt:String id="FunctionButton.Title" DefaultValue="Insert default gist"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Displays a list of your gists and allows you to insert their contents into the current message."/>
+       <bt:String id="FunctionButton.Tooltip" DefaultValue="Inserts the content of the gist you mark as default into the current message."/>
+      </bt:LongStrings>
+    </Resources>
+>>>>>>> c8dd8dfbd19e2a611cad0502f28b417d737a22de
   </VersionOverrides>
 </OfficeApp>
