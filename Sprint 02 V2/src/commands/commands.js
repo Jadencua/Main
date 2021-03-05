@@ -29,9 +29,9 @@ function insertDefaultGist(event) {
           buildBodyContent(gist, function (content, error) {
             if (content) {
               Office.context.mailbox.item.body.setSelectedDataAsync(content,
-                  {coercionType: Office.CoercionType.Html}, function(result) {
-                    event.completed();
-                  });
+                {coercionType: Office.CoercionType.Html}, function(result) {
+                  event.completed();
+              });
             } else {
               showError(error);
               event.completed();
@@ -81,9 +81,9 @@ function dialogClosed(message) {
 
 function getGlobal() {
   return (typeof self !== "undefined") ? self :
-      (typeof window !== "undefined") ? window :
-          (typeof global !== "undefined") ? global :
-              undefined;
+    (typeof window !== "undefined") ? window :
+    (typeof global !== "undefined") ? global :
+    undefined;
 }
 
 var g = getGlobal();
