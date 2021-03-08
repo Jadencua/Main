@@ -96,10 +96,10 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
-		  <bt:String id="TaskpaneButton.Label" DefaultValue="Open sesame"/>
-		  <bt:String id="TaskpaneButton.Title" DefaultValue="Open sesame"/>
-		  <bt:String id="FunctionButton.Label" DefaultValue="Do the thing"/>
-		  <bt:String id="FunctionButton.Title" DefaultValue="Do the thing"/>
+		  <bt:String id="TaskpaneButton.Label" DefaultValue="Open Taskpane"/>
+		  <bt:String id="TaskpaneButton.Title" DefaultValue="Open Taskpane"/>
+		  <bt:String id="FunctionButton.Label" DefaultValue="Insert Random Signature"/>
+		  <bt:String id="FunctionButton.Title" DefaultValue="Insert Random Signature"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
