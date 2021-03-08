@@ -53,3 +53,4 @@ var g = getGlobal();
 
 // The add-in command functions need to be available in global scope.
 g.insertDefaultGist = insertDefaultGist;
+module.exports = insertDefaultGist
