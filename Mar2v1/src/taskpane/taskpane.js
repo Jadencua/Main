@@ -11,7 +11,9 @@ import "../../assets/icon-80.png";
 /* global document, Office */
 
 
-var quotes = ['The only true knowledge is knowing we know nothing', 'All we are is dust in the wind dude', 'Dust, wind, dude', 'Like sands in an hour glass, so are the days of our lives', 'Adams Rulz']
+var quotes = ['You can add new quotes instantly simply by saving this document! ', 'Testing new quotes. ', 'You shall not pass! ', 'The force is strong with this one. ',
+  ' The only true knowledge is knowing we know nothing. ', ' All we are is dust in the wind dude. ', ' Dust, wind, dude. ', ' Like sands in an hour glass, so are the days of our lives. ',
+  ' Adams Rulz. ']
 
 
 Office.onReady(info => {
