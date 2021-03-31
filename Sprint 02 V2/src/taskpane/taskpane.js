@@ -28,11 +28,11 @@
             buildBodyContent(gist, function (content, error) {
               if (content) {
                 Office.context.mailbox.item.body.setSelectedDataAsync(content,
-                    {coercionType: Office.CoercionType.Html}, function(result) {
-                      if (result.status === Office.AsyncResultStatus.Failed) {
-                        showError('Could not insert gist: ' + result.error.message);
-                      }
-                    });
+                  {coercionType: Office.CoercionType.Html}, function(result) {
+                    if (result.status === Office.AsyncResultStatus.Failed) {
+                      showError('Could not insert gist: ' + result.error.message);
+                    }
+                });
               } else {
                 showError('Could not create insertable content: ' + error);
               }
