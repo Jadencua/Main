@@ -6,7 +6,3 @@ var quotes = ['The only true knowledge is knowing we know nothing', 'All we are 
 Test('Test that the number gives the expected quote', () => {
   expect(quotes[1]).toBe('All we are is dust in the wind dude') 
 });
-
-Test('Test that the random number gives the expected quote', () => {
-  expect(quotes[randomNumber]).toBe(quotes[randomNumber]) 
-});
