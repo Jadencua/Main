@@ -34,3 +34,8 @@ export async function run() {
     document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
+
+module.exports = {
+  insertDefaultGist: insertDefaultGist,
+  quotes : quotes
+}
