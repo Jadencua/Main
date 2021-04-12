@@ -23,6 +23,8 @@ Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
 
       document.getElementById("run").onclick = run;
+      document.getElementById("testFunction").onclick = testFunction;
+      document.getElementById("testFunctionTwo").onclick = testFunctionTwo;
   }
 });
 
@@ -36,14 +38,16 @@ export async function run() {
 
 function testFunction() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
-    Office.context.mailbox.item.body.setSelectedDataAsync("\n");
-    document.getElementById('alternateQuoteDisplay').innerHTML = quotes[randomNumber];
+    var string = "\n"
+
+    //document.getElementById('alternateQuoteDisplay').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+    Office.body.setSelectedDataAsync()
 }
 
 function testFunctionTwo() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
-    Office.context.mailbox.item.body.setSelectedDataAsync("  \n  ");
+    
     document.getElementById('alternateQuoteDisplayTwo').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
