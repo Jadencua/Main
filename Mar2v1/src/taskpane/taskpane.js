@@ -1,6 +1,5 @@
 /*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
- * See LICENSE in the project root for license information.
+ * Copyright (c) AdamRulz Corporation. All rights reserved. 
  */
 
 // images references in the manifest
@@ -11,28 +10,46 @@ import "../../assets/icon-80.png";
 /* global document, Office */
 
 
-var quotes = ['You can add new quotes instantly simply by saving this document! ', 'Testing new quotes. ', 'You shall not pass! ', 'The force is strong with this one. ',
-  ' The only true knowledge is knowing we know nothing. ', ' All we are is dust in the wind dude. ', ' Dust, wind, dude. ', ' Like sands in an hour glass, so are the days of our lives. ',
-  ' Adams Rulz. ']
+var quotes = [' If you don\'t know where you\'re going, any road will get you there. -Lewis Carroll' , ' It\'s not what happens to you, but how you react to it that matters. -Epictetus ',
+    ' With pride, there are many curses. With humility, there come many blessings. -Ezra Taft Benson ', ' We cannot become what we need to be by remaining what we are. -Max de Pree ',
+    ' Start with what is right rather than what is acceptable. -Franz Kafka ', ' Beware of false knowledge; it is more dangerous than ignorance. -George Bernard Shaw ',
+    ' Knowing others is wisdom, knowing yourself is Enlightenment. -Lao Tzu ', ' Wise sayings often fall on barren ground, but a kind word is never thrown away. -Arthur Helps ',
+    ' We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology. -Carl Sagan ',
+    ' The characteristic of scientific progress is our knowing what we did not know. -Gaston Bachelard ', ' Comedy is simply a funny way of being serious. -Peter Ustinov ',
+    ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 
 
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
 
       document.getElementById("run").onclick = run;
-
   }
 });
 
 
 
 export async function run() {
-  /**
-   * Insert your Outlook code here
-   */
     var randomNumber = Math.floor(Math.random() * (quotes.length));
     document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
+
+function testFunction() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    Office.context.mailbox.item.body.setSelectedDataAsync("\n");
+    document.getElementById('alternateQuoteDisplay').innerHTML = quotes[randomNumber];
+    Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
+
+function testFunctionTwo() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    Office.context.mailbox.item.body.setSelectedDataAsync("  \n  ");
+    document.getElementById('alternateQuoteDisplayTwo').innerHTML = quotes[randomNumber];
+    Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
+
+function newQuote() {
+    
 }
 
 module.exports = {
