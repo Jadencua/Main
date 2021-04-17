@@ -1,107 +1,66 @@
-(function(){
-  'use strict';
+/*
+ * Copyright (c) AdamRulz Corporation. All rights reserved. 
+ */
 
-  var config;
-  var settingsDialog;
+// images references in the manifest
+import "../../assets/icon-16.png";
+import "../../assets/icon-32.png";
+import "../../assets/icon-80.png";
 
-  Office.initialize = function(reason){
+/* global document, Office */
 
-    jQuery(document).ready(function(){
 
-      config = getConfig();
+var quotes = [' If you don\'t know where you\'re going, any road will get you there. -Lewis Carroll' , ' It\'s not what happens to you, but how you react to it that matters. -Epictetus ',
+    ' With pride, there are many curses. With humility, there come many blessings. -Ezra Taft Benson ', ' We cannot become what we need to be by remaining what we are. -Max de Pree ',
+    ' Start with what is right rather than what is acceptable. -Franz Kafka ', ' Beware of false knowledge; it is more dangerous than ignorance. -George Bernard Shaw ',
+    ' Knowing others is wisdom, knowing yourself is Enlightenment. -Lao Tzu ', ' Wise sayings often fall on barren ground, but a kind word is never thrown away. -Arthur Helps ',
+    ' We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology. -Carl Sagan ',
+    ' The characteristic of scientific progress is our knowing what we did not know. -Gaston Bachelard ', ' Comedy is simply a funny way of being serious. -Peter Ustinov ',
+    ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 
-      // Check if add-in is configured.
-      if (config && config.gitHubUserName) {
-        // If configured, load the gist list.
-        loadGists(config.gitHubUserName);
-      } else {
-        // Not configured yet.
-        $('#not-configured').show();
-      }
 
-      // When insert button is selected, build the content
-      // and insert into the body.
-      $('#insert-button').on('click', function(){
-        var gistId = $('.ms-ListItem.is-selected').val();
-        getGist(gistId, function(gist, error) {
-          if (gist) {
-            buildBodyContent(gist, function (content, error) {
-              if (content) {
-                Office.context.mailbox.item.body.setSelectedDataAsync(content,
-                  {coercionType: Office.CoercionType.Html}, function(result) {
-                    if (result.status === Office.AsyncResultStatus.Failed) {
-                      showError('Could not insert gist: ' + result.error.message);
-                    }
-                });
-              } else {
-                showError('Could not create insertable content: ' + error);
-              }
-            });
-          } else {
-            showError('Could not retrieve gist: ' + error);
-          }
-        });
-      });
+Office.onReady(info => {
+  if (info.host === Office.HostType.Outlook) {
 
-      // When the settings icon is selected, open the settings dialog.
-      $('#settings-icon').on('click', function(){
-        // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
-        if (config) {
-          // If the add-in has already been configured, pass the existing values
-          // to the dialog.
-          url = url + '?gitHubUserName=' + config.gitHubUserName + '&defaultGistId=' + config.defaultGistId;
-        }
-
-        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
-
-        Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
-          settingsDialog = result.value;
-          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
-          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
-        });
-      })
-    });
-  };
-
-  function loadGists(user) {
-    $('#error-display').hide();
-    $('#not-configured').hide();
-    $('#gist-list-container').show();
-
-    getUserGists(user, function(gists, error) {
-      if (error) {
-
-      } else {
-        $('#gist-list').empty();
-        buildGistList($('#gist-list'), gists, onGistSelected);
-      }
-    });
+      document.getElementById("run").onclick = run;
+      document.getElementById("testFunction").onclick = testFunction;
+      document.getElementById("testFunctionTwo").onclick = testFunctionTwo;
+      
   }
+});
 
-  function onGistSelected() {
-    $('#insert-button').removeAttr('disabled');
-    $('.ms-ListItem').removeClass('is-selected').removeAttr('checked');
-    $(this).children('.ms-ListItem').addClass('is-selected').attr('checked', 'checked');
-  }
 
-  function showError(error) {
-    $('#not-configured').hide();
-    $('#gist-list-container').hide();
-    $('#error-display').text(error);
-    $('#error-display').show();
-  }
 
-  function receiveMessage(message) {
-    config = JSON.parse(message.message);
-    setConfig(config, function(result) {
-      settingsDialog.close();
-      settingsDialog = null;
-      loadGists(config.gitHubUserName);
-    });
-  }
+export async function run() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+    Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
 
-  function dialogClosed(message) {
-    settingsDialog = null;
-  }
-})();
+function testFunction() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    var string = "\n"
+
+    //document.getElementById('alternateQuoteDisplay').innerHTML = quotes[randomNumber];
+    Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+    Office.body.setSelectedDataAsync()
+}
+
+function testFunctionTwo() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    
+    document.getElementById('alternateQuoteDisplayTwo').innerHTML = quotes[randomNumber];
+    Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
+
+function newQuote() {
+    var boxValue = document.getElementById('quoteEntry').value;
+    quotes.push(boxValue);
+    console.log(quotes);
+    return false;
+}
+
+module.exports = {
+  insertDefaultGist: insertDefaultGist,
+  quotes : quotes
+}
