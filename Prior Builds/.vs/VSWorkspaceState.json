@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Git the Gist",
-    "\\Git the Gist\\src",
-    "\\Git the Gist\\src\\commands",
-    "\\Git the Gist\\src\\helpers",
-    "\\Git the Gist\\src\\settings",
-    "\\Git the Gist\\src\\taskpane"
+    "\\Sprint 02",
+    "\\Sprint 02\\src",
+    "\\Sprint 02\\src\\commands",
+    "\\Sprint 02\\src\\taskpane",
+    "\\Sprint 03-04",
+    "\\Sprint 03-04\\src",
+    "\\Sprint 03-04\\src\\commands",
+    "\\Sprint 03-04\\src\\settings",
+    "\\Sprint 03-04\\src\\taskpane"
   ],
-  "SelectedNode": "\\Git the Gist\\src\\taskpane\\taskpane.js",
+  "SelectedNode": "\\Sprint 02\\src\\commands\\commands.js",
   "PreviewInSolutionExplorer": false
 }

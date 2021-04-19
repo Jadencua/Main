@@ -3,13 +3,12 @@ Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT
 See LICENSE in the project root for license information.
 */
 
-/* global global, Office, self, window */
 Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
 /*
- Shows a notification when the add-in command is executed.
+ Shows notification when add-in command is executed.
  @param event {Office.AddinCommands.Event}
  */
 
@@ -21,11 +20,10 @@ function action(event) {
     persistent: true
   };
 
-  // Show a notification message
+  // Show notification message
   Office.context.mailbox.item.notificationMessages.replaceAsync("action", message);
 
-  // Be sure to indicate when the add-in command function is complete
-  event.completed();
+    event.completed(); // Indicate when add-in command function is complete
 }
 
 function getGlobal() {
