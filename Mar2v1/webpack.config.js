@@ -18,9 +18,7 @@ module.exports = async (env, options) => { //Webpack prebuilt configuration, sho
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js"
     },
-    resolve: {
-      extensions: [".ts", ".tsx", ".html", ".js"]
-    },
+    resolve: {extensions: [".ts", ".tsx", ".html", ".js"]},
     module: {
       rules: [
         {
@@ -78,12 +76,10 @@ module.exports = async (env, options) => { //Webpack prebuilt configuration, sho
         chunks: ["polyfill", "commands"]
       })
     ],
-    devServer: {
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      },      
-      https: (options.https !== undefined) ? options.https : await devCerts.getHttpsServerOptions(),
-      port: process.env.npm_package_config_dev_server_port || 3000
+      devServer: {
+          headers: { "Access-Control-Allow-Origin": "*" }, 
+          https: (options.https !== undefined) ? options.https : await devCerts.getHttpsServerOptions(),
+          port: process.env.npm_package_config_dev_server_port || 3000
     }
   };
 
