@@ -17,10 +17,12 @@ module.exports = async (env, options) => {
       polyfill: "@babel/polyfill",
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js"
-    },
+      },
+
     resolve: {
       extensions: [".ts", ".tsx", ".html", ".js"]
-    },
+      },
+
     module: {
       rules: [
         {
@@ -32,7 +34,8 @@ module.exports = async (env, options) => {
               presets: ["@babel/preset-env"]
             }
           }
-        },
+            },
+
         {
           test: /\.html$/,
           exclude: /node_modules/,
@@ -46,7 +49,8 @@ module.exports = async (env, options) => {
           }
         }
       ]
-    },
+      },
+
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
@@ -71,13 +75,16 @@ module.exports = async (env, options) => {
             }
           }
         }
-      ]}),
+          ]
+      }),
+
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
         chunks: ["polyfill", "commands"]
       })
-    ],
+      ],
+
     devServer: {
       headers: {
         "Access-Control-Allow-Origin": "*"

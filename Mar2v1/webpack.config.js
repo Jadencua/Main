@@ -8,7 +8,7 @@ const webpack = require("webpack");
 const urlDev="https://localhost:3000/";
 const urlProd="https://www.contoso.com/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
 
-module.exports = async (env, options) => {
+module.exports = async (env, options) => { //Webpack prebuilt configuration, should not change
   const dev = options.mode === "development";
   const buildType = dev ? "dev" : "prod";
   const config = {
