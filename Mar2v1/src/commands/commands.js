@@ -1,8 +1,8 @@
 var config;
 var btnEvent;
 
-// The initialize function must be run each time a new page is loaded.
 Office.initialize = function (reason) {
+    // The initialize function must be run each time a new page is loaded.
 };
 
 // Add any UI-less function here.
@@ -24,8 +24,6 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
     ' The characteristic of scientific progress is our knowing what we did not know. -Gaston Bachelard ', ' Comedy is simply a funny way of being serious. -Peter Ustinov ',
     ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 
-
-
 function insertDefaultGist(event) {
 
     var randomNumber = Math.floor(Math.random() * (quotes.length));
@@ -35,12 +33,7 @@ function insertDefaultGist(event) {
         { coercionType: Office.CoercionType.Html }, function (result) {
             event.completed();
         });
-
-
     }
-
-
-
 
 function dialogClosed(message) {
     settingsDialog = null;
@@ -59,7 +52,3 @@ var g = getGlobal();
 
 // The add-in command functions need to be available in global scope.
 g.insertDefaultGist = insertDefaultGist;
-//module.exports = {
-   // insertDefaultGist: insertDefaultGist,
-   // quotes : quotes
-//}

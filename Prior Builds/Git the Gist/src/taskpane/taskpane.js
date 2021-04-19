@@ -70,9 +70,7 @@
     $('#gist-list-container').show();
 
     getUserGists(user, function(gists, error) {
-      if (error) {
-
-      } else {
+      if (!error) {
         $('#gist-list').empty();
         buildGistList($('#gist-list'), gists, onGistSelected);
       }

@@ -1,8 +1,8 @@
 var config;
 var btnEvent;
 
-// The initialize function must be run each time a new page is loaded.
 Office.initialize = function (reason) {
+    // The initialize function must be run each time a new page is loaded.
 };
 
 // Add any UI-less function here.

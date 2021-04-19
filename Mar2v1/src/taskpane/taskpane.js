@@ -7,8 +7,6 @@ import "../../assets/icon-16.png";
 import "../../assets/icon-32.png";
 import "../../assets/icon-80.png";
 
-/* global document, Office */
-
 
 var quotes = [' If you don\'t know where you\'re going, any road will get you there. -Lewis Carroll' , ' It\'s not what happens to you, but how you react to it that matters. -Epictetus ',
     ' With pride, there are many curses. With humility, there come many blessings. -Ezra Taft Benson ', ' We cannot become what we need to be by remaining what we are. -Max de Pree ',
@@ -29,8 +27,6 @@ Office.onReady(info => {
   }
 });
 
-
-
 export async function run() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
     document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
@@ -39,16 +35,12 @@ export async function run() {
 
 function testFunction() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
-    var string = "\n"
-
-    //document.getElementById('alternateQuoteDisplay').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
     Office.body.setSelectedDataAsync()
 }
 
 function testFunctionTwo() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
-    
     document.getElementById('alternateQuoteDisplayTwo').innerHTML = quotes[randomNumber];
     Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
