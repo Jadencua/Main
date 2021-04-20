@@ -21,17 +21,24 @@
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
-    <div class="small-container">
-        <h1>New Tab App</h1>
-        <form>
-            <input id="item" type="text" placeholder="New" required />
-        </form>
 
-        <h2>Items</h2>
-        <ul></ul>
-
-        <button>Clear All</button>
+<h1>Signature Management</h1>
+<label for="quoteEntry">Enter new quote:</label>
+<form onsubmit="return newQuote()">
+    <input type="text" id="title" name="title" value="Enter Quote Title">
+    <input type="text" id="quote" name="quote" value="Enter Quote">
+     <input type="submit" value="Submit">
+</form><br>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Select Signature to Add</button>
+    <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#about">Placeholder 1</a>
+        <a href="#base">Placeholder 2</a>
+        <a href="#blog">Placeholder 3</a>
     </div>
+</div>
+  
     <script src="taskpane.js"></script>
 </body>
 

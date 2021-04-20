@@ -12,8 +12,6 @@ import "../../assets/icon-80.png";
 
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
-    document.getElementById("sideload-msg").style.display = "none";
-    document.getElementById("app-body").style.display = "flex";
     document.getElementById("run").onclick = run;
   }
 });
@@ -24,7 +22,7 @@ export async function run() {
    */
 }
 
-const form = document.querySelector('form')
+/*const form = document.querySelector('form')
 const ul = document.querySelector('ul')
 const button = document.querySelector('button')
 const input = document.getElementById('item')
@@ -60,3 +58,25 @@ button.addEventListener('click', function () {
         ul.removeChild(ul.firstChild)
     }
 })
+*/
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+}
+  
