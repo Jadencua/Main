@@ -1,14 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
- * See LICENSE in the project root for license information.
+
  */
 
-// images references in the manifest
+// Images references are in the manifest
 import "../../assets/icon-16.png";
 import "../../assets/icon-32.png";
 import "../../assets/icon-80.png";
-
-/* global document, Office */
 
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
@@ -22,7 +19,9 @@ export async function run() {
    */
 }
 
-/*const form = document.querySelector('form')
+/*Prior:
+ 
+const form = document.querySelector('form')
 const ul = document.querySelector('ul')
 const button = document.querySelector('button')
 const input = document.getElementById('item')
