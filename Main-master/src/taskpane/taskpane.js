@@ -28,6 +28,7 @@ const form = document.querySelector('form')
 const ul = document.querySelector('ul')
 const button = document.querySelector('button')
 const input = document.getElementById('item')
+const random = document.getElementById('random')
 let itemsArray = localStorage.getItem('items')
     ? JSON.parse(localStorage.getItem('items'))
     : []
@@ -59,4 +60,10 @@ button.addEventListener('click', function () {
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild)
     }
+})
+
+random.addEventListener('click', function () {
+    var randomNumber = Math.floor(Math.random() * (itemsArray.length));
+    Office.context.mailbox.item.body.setSelectedDataAsync(itemsArray[randomNumber]);
+
 })
