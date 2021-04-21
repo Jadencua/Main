@@ -10,6 +10,8 @@ import "../../assets/icon-80.png";
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
     document.getElementById("run").onclick = run;
+    document.getElementById("myDropdown").onclick = myFunction;
+    document.getElementById("myInput").onkeyup = filterFunction;
   }
 });
 
@@ -57,7 +59,7 @@ button.addEventListener('click', function () {
         ul.removeChild(ul.firstChild)
     }
 })
-*/
+
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -78,4 +80,4 @@ function filterFunction() {
       }
     }
 }
-  
+  */
