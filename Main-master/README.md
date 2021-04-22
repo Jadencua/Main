@@ -1,11 +1,3 @@
-This is the Runtime Terror Signature Management Add-In for Outlook
-
-This add in enables a user to create, store, randomize, and insert signatures. 
-
-A user can create a signature by providing a title in the "Enter Quote Title" field followed by the text it should contain in the "Enter Quote" field. Once the user has completed these fields, the signature can be stored by selecting "Submit". 
-
-Once the user submits, the siganture will be stored in the "local storage" and can be referenced across multiple devices and application types (web application and downloaded application. 
-
 # Office-Addin-TaskPane-JS
 
 This repository contains the source code used by the [Yo Office generator](https://github.com/OfficeDev/generator-office) when you create a new Office Add-in that appears in the task pane. You can also use this repository as a sample to base your own project from if you choose not to use the generator. 
