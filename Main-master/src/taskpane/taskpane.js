@@ -12,6 +12,7 @@ Office.onReady(info => {
 
     document.getElementById("applyRandom").onclick = random;
     document.getElementById("applySelected").onclick = apply;
+    document.getElementById("quote").onclick = newQuote;
 
   }
 });
