@@ -23,6 +23,8 @@ Office.onReady(info => {
       document.getElementById("run").onclick = run;
       document.getElementById("testFunction").onclick = testFunction;
       document.getElementById("testFunctionTwo").onclick = testFunctionTwo;
+      document.getElementById("quoteEntry").onclick = newQuote;
+      document.getElementById("addSelected").onclick = addSignature;
       
   }
 });
@@ -46,10 +48,21 @@ function testFunctionTwo() {
 }
 
 function newQuote() {
-    var boxValue = document.getElementById('quoteEntry').value;
+    var boxValue = document.getElementById('quoteEntry');
     quotes.push(boxValue);
     console.log(quotes);
     return false;
+}
+
+function addSignature() {
+    var selectedSignature = document.getElementById('signature');
+    var i;
+    for (i = 0; i < quotes.length; i++){
+        if (quotes[i] == selectedSignature) {
+            selectedSignature = quotes[i]
+        }
+    }
+    Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature)
 }
 
 module.exports = {

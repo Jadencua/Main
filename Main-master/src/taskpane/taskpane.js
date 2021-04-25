@@ -10,8 +10,10 @@ import "../../assets/icon-80.png";
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
     document.getElementById("run").onclick = run;
-    document.getElementById("myDropdown").onclick = myFunction;
-    document.getElementById("myInput").onkeyup = filterFunction;
+    document.getElementById("applyRandom").onclick = random;
+    document.getElementById("applySelected").onclick = apply;
+    document.getElementById("quote").onclick = addQuote;
+    document.getElementById("randomQuote").onclick = random;
   }
 });
 
@@ -21,6 +23,32 @@ export async function run() {
    */
 }
 
+var quotes = [' If you don\'t know where you\'re going, any road will get you there. -Lewis Carroll' , ' It\'s not what happens to you, but how you react to it that matters. -Epictetus ']
+
+function random() {
+  var randomNumber = Math.floor(Math.random() * (quotes.length));
+  document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+  Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+}
+
+function newQuote() {
+  var boxValue = document.getElementById('quoteEntry').value;
+  quotes.push(boxValue);
+  console.log(quotes);
+  return false;
+}
+
+function apply() {
+  var selectedSignature = document.querySelector('signature').value;
+  Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature)
+}
+
+function addQuote() {
+  var boxValue = document.getElementById('quote').value;
+  quotes.push(boxValue);
+  console.log(quotes);
+  return false;
+}
 /*Prior:
  
 const form = document.querySelector('form')
@@ -60,24 +88,4 @@ button.addEventListener('click', function () {
     }
 })
 
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else {
-        a[i].style.display = "none";
-      }
-    }
-}
   */

@@ -27,16 +27,19 @@
     <br />
     <br />
     <br />
-    <label for="testArea">Testing functions/buttons, just ignore:</label>
-    <br />
-    <button id="testFunction">First Test Button</button>
-    <div id="alternateQuoteDisplay"></div>
-    <br />
-    <button id="testFunctionTwo">Second Test Button</button>
-    <div id="alternateQuoteDisplayTwo"></div>
-    <br />
-    <br />
-    <br />
+    <form id="dropDownList" action="taskpane.js">
+        <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
+        <datalist id="signatures">
+          <option value=' Start with what is right rather than what is acceptable. -Franz Kafka '>
+          <option value=' Wise sayings often fall on barren ground, but a kind word is never thrown away. -Arthur Helps '>
+          </option>
+        </datalist>
+        <br><br>
+        <input type="button" class="button" id="addSelected" value="Add Selected Signature"/>
+        
+        
+      </form>
+      <br>
     <label for="quoteEntry">Enter new quote:</label>
     <form onsubmit="return newQuote()">
     <input type="text" id="quoteEntry" name="quoteEntry"><br><br>

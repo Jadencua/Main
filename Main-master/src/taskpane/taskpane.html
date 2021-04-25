@@ -24,8 +24,7 @@
 
 <h1>Signature Management</h1>
 <label for="quoteEntry">New quote entry:</label>
-<form onsubmit="return newQuote()">
-    <input type="text" id="title" name="title" placeholder="Enter Quote Title">
+<form onsubmit="return addQuote()">
     <input type="text" id="quote" name="quote" placeholder="Enter Quote">
      <input type="submit" value="Submit">
 </form><br>
@@ -33,28 +32,23 @@
 <form id="dropDownList" action="taskpane.js">
     <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
     <datalist id="signatures">
-      <option value="Placeholder 1">
-      <option value="Placeholder 2">
-      <option value="Placeholder 3"></option>
+      <option value=" If you don't know where you're going, any road will get you there. -Lewis Carroll">
+      <option value=" It's not what happens to you, but how you react to it that matters. -Epictetus ">
+      </option>
     </datalist>
     <br><br>
     <input type="button" class="button" id="applyRandom" value="Insert Random Signature"/>
     <input type="button" class="button" id="applySelected" value="Apply Selected Signature"/>
     
+    
   </form>
 
-<!--Alternative dropdown below, looks better but doesn't work in taskpane. Don't know why-->
 
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Select Signature to Add</button>
-    <div id="myDropdown" class="dropdown-content">
-        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        <a href="">Placeholder 1</a>
-        <a href="">Placeholder 2</a>
-        <a href="">Placeholder 3</a>
-        <option value="Placeholder 4"></option>
-    </div>
 </div>
+<button id="randomQuote">Random Quote</button>
+    <div id="quoteDisplay"></div>
+    <br>
+    <br>
   
     <script src="taskpane.js">
     </script>
