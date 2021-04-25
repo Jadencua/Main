@@ -9,11 +9,10 @@ import "../../assets/icon-80.png";
 
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
-    document.getElementById("run").onclick = run;
+
     document.getElementById("applyRandom").onclick = random;
     document.getElementById("applySelected").onclick = apply;
-    document.getElementById("quote").onclick = addQuote;
-    document.getElementById("randomQuote").onclick = random;
+
   }
 });
 
@@ -27,7 +26,7 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
 
 function random() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
-  document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+
   Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
 
@@ -39,8 +38,9 @@ function newQuote() {
 }
 
 function apply() {
-  var selectedSignature = document.querySelector('signature').value;
-  Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature)
+  var selectedSignature = document.getElementById('signature').value;
+    Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
+
 }
 
 function addQuote() {
