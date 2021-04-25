@@ -3,17 +3,22 @@
  */
 
 // Images references are in the manifest
+import { get } from "local-storage";
 import "../../assets/icon-16.png";
 import "../../assets/icon-32.png";
 import "../../assets/icon-80.png";
 
+
+
 Office.onReady(info => {
+  
   if (info.host === Office.HostType.Outlook) {
 
     document.getElementById("applyRandom").onclick = random;
     document.getElementById("applySelected").onclick = apply;
-    document.getElementById("quote").onclick = newQuote;
-
+      document.getElementById("quote").onclick = newQuote;
+      document.getElementById("loadQuotes").onclick = getQuotes;   
+      
   }
 });
 
@@ -30,6 +35,7 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
     ' We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology. -Carl Sagan ',
     ' The characteristic of scientific progress is our knowing what we did not know. -Gaston Bachelard ', ' Comedy is simply a funny way of being serious. -Peter Ustinov ',
     ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
+var option = '';
 
 function random() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
@@ -56,6 +62,17 @@ function addQuote() {
   console.log(quotes);
   return false;
 }
+
+function getQuotes() {
+    for (let i = 0; i < quotes.length; i++) {
+        option += '<option value="' + quotes[i] + '">'
+        console.log(quotes[i]);
+    }
+    document.getElementById("signatures").innerHTML = option;
+
+}
+
+
 /*Prior:
  
 const form = document.querySelector('form')
