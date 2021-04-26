@@ -13,7 +13,6 @@ Office.onReady(info => {
     document.getElementById("applyRandom").onclick = randomSig;
     document.getElementById("applySelected").onclick = applySig;
     document.getElementById("addSig").onclick = addQuote;
-
   }
 });
 
@@ -45,8 +44,15 @@ function applySig() {
 function addQuote() {
   var boxValue = document.getElementById('newSig').value;
   quotes.push(boxValue);
+  //var newSigList = document.getElementById('dropDownList');
+  //var option = document.createElement('OPTION');
+  //option.innerHTML = document.getElementById('newSig').value;
+  //option.value = document.getElementById('newSig').value;
+  //newSigList.add(option);
   document.getElementById('newSig').value = '';
 }
+
+
 /*Prior:
  
 const form = document.querySelector('form')
