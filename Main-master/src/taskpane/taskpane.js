@@ -10,8 +10,8 @@ import "../../assets/icon-80.png";
 Office.onReady(info => {
   if (info.host === Office.HostType.Outlook) {
 
-    document.getElementById("applyRandom").onclick = random;
-    document.getElementById("applySelected").onclick = apply;
+    document.getElementById("applyRandom").onclick = randomSig;
+    document.getElementById("applySelected").onclick = applySig;
     document.getElementById("addSig").onclick = addQuote;
 
   }
@@ -31,16 +31,15 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
     ' The characteristic of scientific progress is our knowing what we did not know. -Gaston Bachelard ', ' Comedy is simply a funny way of being serious. -Peter Ustinov ',
     ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 
-function random() {
+function randomSig() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
 
   Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
 
-function apply() {
-  var selectedSignature = document.getElementById('signature').value;
+function applySig() {
+  var selectedSignature = document.getElementById('sigList').value;
     Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
-
 }
 
 function addQuote() {
