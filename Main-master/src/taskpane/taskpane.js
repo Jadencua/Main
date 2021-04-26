@@ -12,7 +12,7 @@ Office.onReady(info => {
 
     document.getElementById("applyRandom").onclick = random;
     document.getElementById("applySelected").onclick = apply;
-    document.getElementById("quote").onclick = newQuote;
+    document.getElementById("addSig").onclick = addQuote;
 
   }
 });
@@ -37,13 +37,6 @@ function random() {
   Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
 
-function newQuote() {
-  var boxValue = document.getElementById('quoteEntry').value;
-  quotes.push(boxValue);
-  console.log(quotes);
-  return false;
-}
-
 function apply() {
   var selectedSignature = document.getElementById('signature').value;
     Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
@@ -51,10 +44,9 @@ function apply() {
 }
 
 function addQuote() {
-  var boxValue = document.getElementById('quote').value;
+  var boxValue = document.getElementById('newSig').value;
   quotes.push(boxValue);
-  console.log(quotes);
-  return false;
+  document.getElementById('newSig').value = '';
 }
 /*Prior:
  
