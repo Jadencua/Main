@@ -16,9 +16,8 @@ Office.onReady(info => {
 
     document.getElementById("applyRandom").onclick = random;
     document.getElementById("applySelected").onclick = apply;
-      document.getElementById("quote").onclick = newQuote;
-      document.getElementById("loadQuotes").onclick = getQuotes;   
-      
+    document.getElementById("quote").onclick = newQuote;
+
   }
 });
 
@@ -37,42 +36,27 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
     ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 var option = '';
 
-function random() {
+function randomSig() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
 
   Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
 }
 
-function newQuote() {
-  var boxValue = document.getElementById('quoteEntry').value;
-  quotes.push(boxValue);
-  console.log(quotes);
-  return false;
-}
-
-function apply() {
-  var selectedSignature = document.getElementById('signature').value;
+function applySig() {
+  var selectedSignature = document.getElementById('sigList').value;
     Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
-
 }
 
 function addQuote() {
-  var boxValue = document.getElementById('quote').value;
+  var boxValue = document.getElementById('newSig').value;
   quotes.push(boxValue);
-  console.log(quotes);
-  return false;
+  //var newSigList = document.getElementById('dropDownList');
+  //var option = document.createElement('OPTION');
+  //option.innerHTML = document.getElementById('newSig').value;
+  //option.value = document.getElementById('newSig').value;
+  //newSigList.add(option);
+  document.getElementById('newSig').value = '';
 }
-
-function getQuotes() {
-    for (let i = 0; i < quotes.length; i++) {
-        option += '<option value="' + quotes[i] + '">'
-        console.log(quotes[i]);
-    }
-    document.getElementById("signatures").innerHTML = option;
-
-}
-
-
 /*Prior:
  
 const form = document.querySelector('form')
