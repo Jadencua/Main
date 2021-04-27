@@ -26,18 +26,17 @@
   <input type="text" placeholder="Enter new signature." id="newSig" required>
   <input type="button" class="button" id="addSig" value="Submit"/>
 
-<form id="dropDownList" action="taskpane.js">
-    <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
-    <datalist id="signatures">
-      <option value=" If you don't know where you're going, any road will get you there. -Lewis Carroll">
-      <option value=" It's not what happens to you, but how you react to it that matters. -Epictetus ">
-      </option>
-    </datalist>
-    <br><br>
-    <input type="button" class="button" id="applyRandom" value="Insert Random Signature"/>
-    <input type="button" class="button" id="applySelected" value="Apply Selected Signature"/>
-    
-    
+  <form id="dropDownList" action="taskpane.js">
+      <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
+      <datalist id="signatures">
+          <option value=" ">
+          </option>
+      </datalist>
+      <br><br>
+      <input type="button" class="button" id="applyRandom" value="Insert Random Signature" />
+      <input type="button" class="button" id="applySelected" value="Apply Selected Signature" />
+      <input type="button" class="button" id="loadQuotes" value="Load Quotes" />
+
   </form>
 
 

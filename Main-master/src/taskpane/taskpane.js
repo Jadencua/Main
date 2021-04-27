@@ -14,10 +14,10 @@ Office.onReady(info => {
   
   if (info.host === Office.HostType.Outlook) {
 
-    document.getElementById("applyRandom").onclick = random;
-    document.getElementById("applySelected").onclick = apply;
-    document.getElementById("quote").onclick = newQuote;
-
+    document.getElementById("applyRandom").onclick = randomSig;
+    document.getElementById("applySelected").onclick = applySig;
+    //document.getElementById("quote").onclick = newQuote;
+      document.getElementById("loadQuotes").onclick = getQuotes;
   }
 });
 
@@ -57,6 +57,16 @@ function addQuote() {
   //newSigList.add(option);
   document.getElementById('newSig').value = '';
 }
+
+function getQuotes() {
+    for (let i = 0; i < quotes.length; i++) {
+        option += '<option value="' + quotes[i] + '">'
+        console.log(quotes[i]);
+    }
+    document.getElementById("signatures").innerHTML = option;
+
+}
+
 /*Prior:
  
 const form = document.querySelector('form')
