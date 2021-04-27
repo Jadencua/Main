@@ -3,7 +3,6 @@
  */
 
 // Images references are in the manifest
-import { get } from "local-storage";
 import "../../assets/icon-16.png";
 import "../../assets/icon-32.png";
 import "../../assets/icon-80.png";
@@ -56,6 +55,7 @@ function addQuote() {
   //option.value = document.getElementById('newSig').value;
   //newSigList.add(option);
   document.getElementById('newSig').value = '';
+
 }
 
 function getQuotes() {
