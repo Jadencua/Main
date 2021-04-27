@@ -43,17 +43,15 @@ function randomSig() {
 
 function applySig() {
   var selectedSignature = document.getElementById('signature').value;
-    Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
+  Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
+  document.getElementById('signature').value = '';
+
 }
 
 function addQuote() {
   var boxValue = document.getElementById('newSig').value;
   quotes.push(boxValue);
-  //var newSigList = document.getElementById('dropDownList');
-  //var option = document.createElement('OPTION');
-  //option.innerHTML = document.getElementById('newSig').value;
-  //option.value = document.getElementById('newSig').value;
-  //newSigList.add(option);
+  getQuotes();
   document.getElementById('newSig').value = '';
 
 }
@@ -66,44 +64,3 @@ function getQuotes() {
     document.getElementById("signatures").innerHTML = option;
 
 }
-
-/*Prior:
- 
-const form = document.querySelector('form')
-const ul = document.querySelector('ul')
-const button = document.querySelector('button')
-const input = document.getElementById('item')
-let itemsArray = localStorage.getItem('items')
-    ? JSON.parse(localStorage.getItem('items'))
-    : []
-
-localStorage.setItem('items', JSON.stringify(itemsArray))
-const data = JSON.parse(localStorage.getItem('items'))
-
-const liMaker = (text) => {
-    const li = document.createElement('li')
-    li.textContent = text
-    ul.appendChild(li)
-}
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault()
-
-    itemsArray.push(input.value)
-    localStorage.setItem('items', JSON.stringify(itemsArray))
-    liMaker(input.value)
-    //input.value = ''
-})
-
-data.forEach((item) => {
-    liMaker(item)
-})
-
-button.addEventListener('click', function () {
-    localStorage.clear()
-    while (ul.firstChild) {
-        ul.removeChild(ul.firstChild)
-    }
-})
-
-  */
