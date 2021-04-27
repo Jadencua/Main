@@ -29,6 +29,7 @@
   "dependencies": {
     "jquery": "^3.6.0",
     "local-storage": "^2.0.0",
+    "localstorage": "^1.0.1",
     "showdown": "^1.9.1",
     "urijs": "^1.19.6"
   },

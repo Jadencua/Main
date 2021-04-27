@@ -16,8 +16,8 @@ Office.onReady(info => {
 
     document.getElementById("applyRandom").onclick = randomSig;
     document.getElementById("applySelected").onclick = applySig;
-    //document.getElementById("quote").onclick = newQuote;
-      document.getElementById("loadQuotes").onclick = getQuotes;
+    document.getElementById("addSig").onclick = addQuote;
+    document.getElementById("loadQuotes").onclick = getQuotes;
   }
 });
 
@@ -43,7 +43,7 @@ function randomSig() {
 }
 
 function applySig() {
-  var selectedSignature = document.getElementById('sigList').value;
+  var selectedSignature = document.getElementById('signature').value;
     Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
 }
 
