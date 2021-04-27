@@ -22,29 +22,31 @@
 
 <body class="ms-font-m ms-welcome ms-Fabric">
 
-<h1>Signature Management</h1>
-  <input type="text" placeholder="Enter new signature." id="newSig" required>
-  <input type="button" class="button" id="addSig" value="Submit"/>
+    <h1>Signature Management</h1>
+    <input type="text" placeholder="Enter new signature." id="newSig" required>
+    <input type="button" class="button" id="addSig" value="Submit" />
 
-  <form id="dropDownList" action="taskpane.js">
-      <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
-      <datalist id="signatures">
-          <option value=" ">
-          </option>
-      </datalist>
-      <br><br>
-      <input type="button" class="button" id="applyRandom" value="Insert Random Signature" />
-      <input type="button" class="button" id="applySelected" value="Apply Selected Signature" />
-      <input type="button" class="button" id="loadQuotes" value="Load Quotes" />
-
-  </form>
+    <form id="dropDownList" action="taskpane.js">
+        <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
+        <datalist id="signatures">
+            <option value=" ">
+            </option>
+        </datalist>
+        <br><br>
 
 
+    </form>
+
+    <input type="button" class="button" id="applyRandom" value="Random Signature" />
+    <br />
+    <input type="button" class="button" id="applySelected" value="Selected Signature" />
+    <br />
+    <input type="button" class="button" id="loadQuotes" value="Load Quotes" />
 
 
     <br>
     <br>
-  
+
     <script src="taskpane.js">
     </script>
 </body>
