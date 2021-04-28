@@ -4,7 +4,7 @@ This add in enables a user to create, store, randomize, and insert signatures.
 
 A user can create a signature by providing a signature in the "Enter New Signature" text box. Once the user has completed these fields, the signature can be stored by selecting "Submit".
 
-Once the user submits, the siganture will be stored in the "local storage" and can be referenced across multiple devices and application types (web application and downloaded application). These stored signatures are accessible from drop down found beneath the "Enter New Signature" text box.
+Once the user submits, the siganture will be stored in the "local storage" and can (eventually) be referenced across multiple devices and application types (web application and downloaded application). These stored signatures are accessible from drop down found beneath the "Enter New Signature" text box.
 
 Beneath the Search or Select drop down, the user can insert a Random Signature, Apply Selected Signature, and Load all available quotes.
 
