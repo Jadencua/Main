@@ -55,11 +55,17 @@ var starQuotes = [' No, I am your father - Darth Vader',
     ' What about the droid attack on the wookies? - Ki - Adi Mundi',
     ' Kenobiiiiiiiiiiah!!! - Darthmaul']
 var option = '';
+var randomNumber = 0;
+var work = true;
 
 function randomSig() {
-  var randomNumber = Math.floor(Math.random() * (quotes.length));
-
-  Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber])
+    if (work) {
+        randomNumber = Math.floor(Math.random() * (quotes.length));
+        Office.context.mailbox.item.body.setSelectedDataAsync(quotes[randomNumber]);
+    } else {
+        randomNumber = Math.floor(Math.random() * (starQuotes.length));
+        Office.context.mailbox.item.body.setSelectedDataAsync(starQuotes[randomNumber]);
+    }
 }
 
 function applySig() {
@@ -70,14 +76,22 @@ function applySig() {
 }
 
 function addQuote() {
-  var boxValue = document.getElementById('newSig').value;
-  quotes.push(boxValue);
-  getQuotes();
-  document.getElementById('newSig').value = '';
+    if (work) {
+        var boxValue = document.getElementById('newSig').value;
+        quotes.push(boxValue);
+        getQuotes();
+        document.getElementById('newSig').value = '';
+    } else {
+        var boxValue = document.getElementById('newSig').value;
+        starQuotes.push(boxValue);
+        getStarQuotes();
+        document.getElementById('newSig').value = '';
+    }
 
 }
 
 function getQuotes() {
+    work = true;
     option = '';
     for (let i = 0; i < quotes.length; i++) {
         option += '<option value="' + quotes[i] + '">'
@@ -88,6 +102,7 @@ function getQuotes() {
 }
 
 function getStarQuotes() {
+    work = false;
     option = '';
     for (let i = 0; i < starQuotes.length; i++) {
         option += '<option value="' + starQuotes[i] + '">'
