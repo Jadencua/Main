@@ -2,13 +2,11 @@ This is the Runtime Terror Signature Management Add-In for Outlook
 
 This add in enables a user to create, store, randomize, and insert signatures.
 
-A user can create a signature by providing a title in the "Enter Quote Title" field followed by the text it should contain in the "Enter Quote" field. Once the user has completed these fields, the signature can be stored by selecting "Submit".
+A user can create a signature by providing a signature in the "Enter New Signature" text box. Once the user has completed these fields, the signature can be stored by selecting "Submit".
 
-Once the user submits, the siganture will be stored in the "local storage" and can be referenced across multiple devices and application types (web application and downloaded application).
+Once the user submits, the siganture will be stored in the "local storage" and can be referenced across multiple devices and application types (web application and downloaded application). These stored signatures are accessible from drop down found beneath the "Enter New Signature" text box.
 
-Beneath the text boxes that allow a user to provide a New Quote Entry, the user is able to Search or Select for previously saved quotes. This field provides a drop down where the user can make their selection as needed. 
-
-Beneath the Search or Select drop down, the user can Insert Random Signature, Apply Selected Signature, and Select Signature to Add.
+Beneath the Search or Select drop down, the user can insert a Random Signature, Apply Selected Signature, and Load all available quotes.
 
 
 # Office-Addin-TaskPane-JS
