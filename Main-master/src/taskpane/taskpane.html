@@ -1,4 +1,4 @@
-﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 <!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <title>Runtime Terror Task Pane Add-in</title>
 
     <!-- Office JavaScript API -->
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script> 
 
     <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
@@ -23,28 +23,30 @@
 <body class="ms-font-m ms-welcome ms-Fabric">
 
     <h1>Signature Management</h1>
-    <input type="text" placeholder="Enter new signature." id="newSig" required>
-    <input type="button" class="button" id="addSig" value="Submit" />
-
+    <input type="text" placeholder="Enter New Signature" id="newSig" required>
+    <input type="button" class="button" id="addSig" value="Store Signature" />
+     <br />
+        <br>
+        <input type="button" class="button" id="loadQuotes" value="Load Work Signatures" />
+    <br />
+    <br>
+    <input type="button" class="button" id="loadStarQuotes" value="Load Personal Signatures" />
+    <br>
+    <br>
     <form id="dropDownList" action="taskpane.js">
-        <input list="signatures" name="signature" id="signature" placeholder="Search or Select">
+        <input list="signatures" name="signature" id="signature" placeholder="Search or Select for Available Signatures">
         <datalist id="signatures">
             <option value=" ">
             </option>
         </datalist>
-        <br><br>
-
-
+            <input type="button" class="button" id="applySelected" value="Insert Selection" />
+            <br>
+            <br>
+                <input type="button" class="button" id="applyRandom" value="Insert Random" />
+    <br />
+           <br />
+ 
     </form>
-
-    <input type="button" class="button" id="applyRandom" value="Random Signature" />
-    <br />
-    <input type="button" class="button" id="applySelected" value="Selected Signature" />
-    <br />
-    <input type="button" class="button" id="loadQuotes" value="Load Work Quotes" />
-    <br />
-    <input type="button" class="button" id="loadStarQuotes" value="Load  personal Quotes" />
-
 
     <br>
     <br>
