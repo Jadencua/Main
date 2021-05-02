@@ -16,8 +16,10 @@ Office.onReady(info => {
     document.getElementById("applyRandom").onclick = randomSig;
     document.getElementById("applySelected").onclick = applySig;
     document.getElementById("addSig").onclick = addQuote;
-      document.getElementById("loadQuotes").onclick = getQuotes;
-      document.getElementById("loadStarQuotes").onclick = getStarQuotes;
+    document.getElementById("loadQuotes").onclick = getQuotes;
+    document.getElementById("loadStarQuotes").onclick = getStarQuotes;
+    document.getElementById("removeSig").onclick = removeSig;
+    document.getElementById("removeAll").onclick = removeAll;
   }
 });
 
@@ -36,6 +38,7 @@ var quotes = [' If you don\'t know where you\'re going, any road will get you th
     ' A sense of humor... is needed armor. Joy in one\'s heart and some laughter on one\'s lips is a sign that the person down deep has a pretty good grasp of life. -Hugh Sidey ']
 
 var starQuotes = [' No, I am your father - Darth Vader',
+    ' How wuude! - Jar Jar Binks',
     ' I got a bad feeling about this - Han Solo',
     'General Kenobi - General Grievous',
     ' I find your lack of faith disturbing - Darth Vader',
@@ -110,4 +113,36 @@ function getStarQuotes() {
     }
     document.getElementById("signatures").innerHTML = option;
 
+}
+
+function removeSig() {
+    if (work) {
+        var selectedSignature = document.getElementById('signature').value;
+        for (let i = 0; i < quotes.length; i++) {
+            if (quotes[i] == selectedSignature){
+                quotes.splice(i,1)
+                getQuotes();
+            }
+        }  
+    } else {
+        var selectedSignature = document.getElementById('signature').value;
+        for (let i = 0; i < starQuotes.length; i++) {
+            if (starQuotes[i] == selectedSignature){
+                starQuotes.splice(i,1)
+                getStarQuotes();
+            }
+        }  
+    }
+    document.getElementById('signature').value = '';
+}
+
+function removeAll() {
+    if (work) {
+        quotes.splice(0,quotes.length)
+        getQuotes();
+    } else {
+        starQuotes.splice(0,starQuotes.length)
+        getStarQuotes();
+    }
+    document.getElementById('signature').value = '';
 }
