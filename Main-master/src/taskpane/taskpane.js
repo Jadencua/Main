@@ -19,7 +19,8 @@ Office.onReady(info => {
     document.getElementById("loadQuotes").onclick = getQuotes;
     document.getElementById("loadStarQuotes").onclick = getStarQuotes;
     document.getElementById("removeSig").onclick = removeSig;
-    document.getElementById("removeAll").onclick = removeAll;
+      document.getElementById("removeAll").onclick = removeAll;
+      loadLocal();
   }
 });
 
@@ -60,6 +61,12 @@ var starQuotes = [' No, I am your father - Darth Vader',
 var option = '';
 var randomNumber = 0;
 var work = true;
+
+let itemsArray = localStorage.getItem('items')
+    ? JSON.parse(localStorage.getItem('items'))
+    : []
+
+localStorage.setItem('items', JSON.stringify(itemsArray));
 
 function randomSig() {
     if (work) {
@@ -145,4 +152,10 @@ function removeAll() {
         getStarQuotes();
     }
     document.getElementById('signature').value = '';
+}
+
+function loadLocal() {
+    for (let i = 0; i < itemsArray.length; i++) {
+        starQuotes.push(itemsArray[i]);
+    }
 }
