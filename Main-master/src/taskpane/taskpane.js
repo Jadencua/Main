@@ -21,6 +21,7 @@ Office.onReady(info => {
     document.getElementById("removeSig").onclick = removeSig;
       document.getElementById("removeAll").onclick = removeAll;
       loadLocal();
+      loadStarLocal();
   }
 });
 
@@ -73,6 +74,12 @@ let itemsArray = localStorage.getItem('items')
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 
+let staritemsArray = localStorage.getItem('staritems')
+    ? JSON.parse(localStorage.getItem('staritems'))
+    : []
+
+localStorage.setItem('staritems', JSON.stringify(staritemsArray));
+
 function randomSig() {
     if (work) {
         randomNumber = Math.floor(Math.random() * (quotes.length));
@@ -94,12 +101,17 @@ function addQuote() {
     if (work) {
         var boxValue = document.getElementById('newSig').value;
         quotes.push(boxValue);
+        itemsArray.push(boxValue);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
         getQuotes();
         document.getElementById('newSig').value = '';
     } else {
         var boxValue = document.getElementById('newSig').value;
         starQuotes.push(boxValue);
         getStarQuotes();
+        staritemsArray.push(boxValue);
+        localStorage.setItem('staritems', JSON.stringify(staritemsArray));
+         
         document.getElementById('newSig').value = '';
     }
 
@@ -157,11 +169,21 @@ function removeAll() {
         getStarQuotes();
     }
     document.getElementById('signature').value = '';
+    localStorage.clear();
 }
 
 function loadLocal() {
     for (let i = 0; i < itemsArray.length; i++) {
-        starQuotes.push(itemsArray[i]);
+        quotes.push(itemsArray[i]);
+        console.log(itemsArray[i]);
+    }
+}
+
+function loadStarLocal() {
+    for (let i = 0; i < staritemsArray.length; i++) {
+        
+        starQuotes.push(staritemsArray[i]);
+        console.log('adding starwars');
     }
 }
 
