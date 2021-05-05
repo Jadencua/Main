@@ -56,6 +56,11 @@ var starQuotes = [' No, I am your father - Darth Vader',
     ' Good luck -Ahsoka Tano',
     ' You where right about one thing master. The negotiations where short. - Obi wan',
     ' I am the Senate - Sheev Palpatine',
+    ' Do it - Sheev Palpatine' ,
+    ' Now this is podracing! - Anakin' ,
+    ' It\'s a trap - Admiral Ackbar' ,
+    ' Roger roger - Battle Droid' ,
+    ' What, you think you\'re some kind of Jedi, waving your hand around like that? I\'m a Toydarian. Mind tricks don\'t-a work on-a me. Only money. No money, no parts, no deal! - Watto' ,
     ' What about the droid attack on the wookies? - Ki - Adi Mundi',
     ' Kenobiiiiiiiiiiah!!! - Darthmaul']
 var option = '';
@@ -158,4 +163,14 @@ function loadLocal() {
     for (let i = 0; i < itemsArray.length; i++) {
         starQuotes.push(itemsArray[i]);
     }
+}
+
+module.exports = {
+    randomSig : randomSig ,
+    applySig : applySig ,
+    addQuote : addQuote ,
+    getQuotes : getQuotes ,
+    getStarQuotes : getStarQuotes ,
+    removeSig : removeSig ,
+    removeAll : removeAll 
 }
