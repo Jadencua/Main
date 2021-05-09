@@ -1,4 +1,4 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 <!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
 
 <!DOCTYPE html>
@@ -8,23 +8,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Runtime Terror Task Pane Add-in</title>
 
     <!-- Office JavaScript API -->
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script> 
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
     <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
 
     <!-- Template styles -->
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
-
+    <img width=90 height="90" alt="silly" src="../../assets/whiteWolf.png">
     <h1>Signature Management</h1>
     <h4>1. Start by loading either Work or Personal Signatures</h4>
-        <input type="button" class="button" id="loadQuotes" value="Load Work Signatures" />
+    <input type="button" class="button" id="loadQuotes" value="Load Work Signatures" />
     <br />
     <br>
     <input type="button" class="button" id="loadStarQuotes" value="Load Personal Signatures" />
@@ -33,7 +34,7 @@
     <h4>2. Create, store, search or select, insert random, and remove signatures from selected database as needed </h4>
     <input type="text" placeholder="Enter New Signature" id="newSig" required>
     <input type="button" class="button" id="addSig" value="Store Signature" />
-     <br />
+    <br />
     <br>
     <form id="dropDownList" action="taskpane.js">
         <input list="signatures" name="signature" id="signature" placeholder="Search or Select for Available Signatures">
@@ -41,20 +42,20 @@
             <option value=" ">
             </option>
         </datalist>
-            <input type="button" class="button" id="applySelected" value="Insert Selection" />
-            <br>
-            <br>
-                <input type="button" class="button" id="applyRandom" value="Insert Random" />
-                <input type="button" class="button" id="removeSig" value="Remove Selection" />
-                <input type="button" class="button" id="removeAll" value="Remove All" />
-    <br />
-           <br />
- 
+        <input type="button" class="button" id="applySelected" value="Insert Selection" />
+        <br>
+        <br>
+        <input type="button" class="button" id="applyRandom" value="Insert Random" />
+        <input type="button" class="button" id="removeSig" value="Remove Selection" />
+        <input type="button" class="button" id="removeAll" value="Remove All" />
+        <br />
+        <br />
+
     </form>
 
     <br>
     <br>
-    <img width="90" height="90" alt="silly" src="../../assets/RIM.png" >
+
 
     <script src="taskpane.js">
     </script>
