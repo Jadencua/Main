@@ -435,6 +435,9 @@ dd {
     overflow: hidden
 }
 
+img{
+    width:100%;
+}
 .button, [type=button], [type=reset], [type=submit], a.button, button {
     -webkit-appearance: none;
     display: inline-block;
