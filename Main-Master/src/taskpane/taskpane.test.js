@@ -26,7 +26,15 @@ test('Test random number is giving valid values' , () => {
 })
 
 test('Get a specific signature from the signature list' , () => {
-    const add = "test";
-    quotes.push(add);
-    expect(quotes[quotes.length - 1]).toEqual("test");
+    expect(quotes[5]).toEqual(" Beware of false knowledge; it is more dangerous than ignorance. -George Bernard Shaw ");
+})
+
+test('Remove a specific signature from the signature list' , () => {
+    quotes.splice(5,1);
+    expect(quotes[5]).toEqual(" Knowing others is wisdom, knowing yourself is Enlightenment. -Lao Tzu ");
+})
+
+test('Clear the signature list' , () => {
+    quotes.splice(0,quotes.length);
+    expect(quotes).toEqual([]);
 })
