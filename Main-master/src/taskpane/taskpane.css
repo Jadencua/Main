@@ -495,10 +495,6 @@ dd {
     border-radius: 40px
 }
 
-.round-button, a.round-button {
-    border-radius: 0
-}
-
 .full-button, a.full-button {
     display: block;
     width: 100%
