@@ -123,7 +123,7 @@ function getQuotes() {
   work = true;
   option = "";
   for (let i = 0; i < quotes.length; i++) {
-    option += "<option value=" + quotes[i] + ">";
+    option += '<option value="' + quotes[i] + '">';
     console.log(quotes[i]);
   }
   document.getElementById("signatures").innerHTML = option;
@@ -133,7 +133,7 @@ function getStarQuotes() {
   work = false;
   option = "";
   for (let i = 0; i < starQuotes.length; i++) {
-    option += "<option value=" + starQuotes[i] + ">";
+    option += '<option value="' + starQuotes[i] + '">';
     console.log(starQuotes[i]);
   }
   document.getElementById("signatures").innerHTML = option;
