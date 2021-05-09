@@ -14,7 +14,7 @@ html {
 body {
     margin: 0 ;
     color: #404040;
-    background: #fff;
+    background: rgb(184, 182, 182);
     font-size: 1rem;
 }
 
@@ -80,6 +80,7 @@ pre {
     font-size: 14px;
     margin: 0 0 1.5rem;
 }
+
 
 button[disabled], html input[disabled] {
     cursor: default
@@ -209,7 +210,8 @@ kbd {
     border: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: 0 1px 0 rgba(0,0,0,.2),inset 0 0 0 2px #fff;
-    color: #333;
+     color: #333;
+
     display: inline-block;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 13px;
@@ -491,10 +493,6 @@ dd {
 
 .round-button, a.round-button {
     border-radius: 40px
-}
-
-.square-button, a.square-button {
-    border-radius: 0
 }
 
 .full-button, a.full-button {

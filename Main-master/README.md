@@ -1,3 +1,18 @@
+This is the Runtime Terror Signature Management Add-In for Outlook
+
+This add in enables a user to create, store, randomize, load, and insert signatures.
+
+A user can create a signature by providing a signature in the "Enter New Signature" text box. Once the user has completed these fields, the signature can be stored by selecting "Submit".
+
+Once the user submits, the siganture will be stored in the "local storage" for the database which they are currently viewing. These stored signatures are accessible from drop down found beneath the "Enter New Signature" text box.
+
+Beneath the Search or Select drop down, the user can insert a Random Signature, Apply Selected Signature, and Load all available quotes for both personal and work email accounts.
+
+When the "Load All Work Quotes" or "Load All Personal Quotes" button is selected, the user will be able to see all previously stored signatures in the drop down specific to either the Personal or Work database (depending on the selection made). At that time, the user can make a selection from the drop down, click "Selected Signature" and the quote will be added to the email. Additionally, while those specific quotes are loaded, if the user should add in any new quotes to the database, after clicking submit, the newly stored signature will be available in the database that is currently loaded.
+
+To insert a random signature, the user simply needs to load the database they wish to work in (either personal or work), and once loaded, select "Random Signature". When the user does this, the system will select at random a quote to add to the email. 
+
+
 # Office-Addin-TaskPane-JS
 
 This repository contains the source code used by the [Yo Office generator](https://github.com/OfficeDev/generator-office) when you create a new Office Add-in that appears in the task pane. You can also use this repository as a sample to base your own project from if you choose not to use the generator. 
