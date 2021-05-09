@@ -67,6 +67,8 @@ var starQuotes = [' No, I am your father - Darth Vader',
 var option = '';
 var randomNumber = 0;
 var work = true;
+var boxValue;
+var selectedSignature;
 
 let itemsArray = localStorage.getItem('items')
     ? JSON.parse(localStorage.getItem('items'))
@@ -91,7 +93,7 @@ function randomSig() {
 }
 
 function applySig() {
-  var selectedSignature = document.getElementById('signature').value;
+  selectedSignature = document.getElementById('signature').value;
   Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature);
   document.getElementById('signature').value = '';
 
@@ -99,14 +101,14 @@ function applySig() {
 
 function addQuote() {
     if (work) {
-        var boxValue = document.getElementById('newSig').value;
+        boxValue = document.getElementById('newSig').value;
         quotes.push(boxValue);
         itemsArray.push(boxValue);
         localStorage.setItem('items', JSON.stringify(itemsArray));
         getQuotes();
         document.getElementById('newSig').value = '';
     } else {
-        var boxValue = document.getElementById('newSig').value;
+        boxValue = document.getElementById('newSig').value;
         starQuotes.push(boxValue);
         getStarQuotes();
         staritemsArray.push(boxValue);
@@ -141,15 +143,15 @@ function getStarQuotes() {
 
 function removeSig() {
     if (work) {
-        var selectedSignature = document.getElementById('signature').value;
+        selectedSignature = document.getElementById('signature').value;
         for (let i = 0; i < quotes.length; i++) {
             if (quotes[i] == selectedSignature){
-                quotes.splice(i,1)
+                quotes.splice(i, 1);
                 getQuotes();
             }
         }  
     } else {
-        var selectedSignature = document.getElementById('signature').value;
+        selectedSignature = document.getElementById('signature').value;
         for (let i = 0; i < starQuotes.length; i++) {
             if (starQuotes[i] == selectedSignature){
                 starQuotes.splice(i,1)
