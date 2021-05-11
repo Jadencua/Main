@@ -32,10 +32,12 @@
     <br>
     <br>
     <h4>2. Create, store, search or select, insert random, and remove signatures from selected database as needed </h4>
+    <h6> Create:</h6>
     <input type="text" placeholder="Enter New Signature" id="newSig" required>
     <input type="button" class="button" id="addSig" value="Store Signature" />
    
     <br>
+    <h6> Search & Insert:</h6>
     <form id="dropDownList" action="taskpane.js">
         <input list="signatures" name="signature" id="signature" placeholder="Search or Select for Stored Signatures" style="width: 70%;"/ >
         <datalist id="signatures">
@@ -44,9 +46,9 @@
         </datalist>
         
         <input type="button" class="button" id="applySelected" value="Insert Selection" />
-        <br>
-        <br>
-        <input type="button" class="button" id="applyRandom" value="Insert Random" />
+        <input type="button" class="button" id="applyRandom" value="Insert Random" /><br><br>
+
+        <h6> Remove:</h6>
         <input type="button" class="button" id="removeSig" value="Remove Selection" />
         <input type="button" class="button" id="removeAll" value="Remove All" />
         <br />
