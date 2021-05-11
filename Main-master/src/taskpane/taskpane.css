@@ -14,7 +14,7 @@ html {
 body {
     margin: 0 ;
     color: #404040;
-    background: rgb(184, 182, 182);
+    background: rgb(226, 225, 225);
     font-size: 1rem;
 }
 
@@ -45,7 +45,7 @@ b, strong {
 }
 
 sub, sup {
-    font-size: 75%;
+    font-size: 1rem;
     line-height: 0;
     position: relative;
     vertical-align: baseline
@@ -71,7 +71,7 @@ pre {
     overflow: auto;
     border: 0;
     border-radius: 4px;
-    background: transparent;
+    background-color: transparent;
     padding: 1rem;
     -moz-tab-size: 2;
     -o-tab-size: 2;
@@ -110,36 +110,42 @@ dl, ol, p, table, ul {
 h1, h2, h3, h4, h5 {
     font-weight: 600;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
-    line-height: 1.2;
+    line-height: 1;
     color: #404040;
 }
 
     h1, h1:not(:first-child), h2, h2:not(:first-child), h3, h3:not(:first-child), h4, h4:not(:first-child), h5, h5:not(:first-child) {
-        margin: 1.5rem 0;
+        margin: 1.5 rem 0;
     }
 
         h1:not(:first-child), h2:not(:first-child), h3:not(:first-child) {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
 h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 h4 {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 h5 {
     font-size: 1rem;
+    margin-bottom: 1px;
+}
+
+h6 {
+    font-size: .9rem;
+    margin-bottom: 1px;
 }
 
 @media (min-width:600px) {
@@ -435,19 +441,22 @@ dd {
     overflow: hidden
 }
 
+img{
+    width:100%;
+}
 .button, [type=button], [type=reset], [type=submit], a.button, button {
     -webkit-appearance: none;
     display: inline-block;
     border: 1px solid #0366ee;
     border-radius: 4px;
     background: #0366ee;
-    color: #fff;
+    color: rgb(253, 250, 250);
     font-weight: 600;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 1rem;
     text-transform: none;
     padding: .75rem 1.25rem;
-    margin: 0 0 .5rem;
+    margin-top: 3px;
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
@@ -502,16 +511,16 @@ dd {
 
 [type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
     display: block;
-    border: 1px solid #cdcdcd;
-    border-radius: 4px;
+    border: 1px solid #6b6b6b;
+    border-radius: 0px;
     padding: .75rem;
     outline: none;
-    background: transparent;
-    margin-bottom: .5rem;
+    background: #fff;
+    margin-bottom: .0rem;
     font-size: 1rem;
-    width: 100%;
-    max-width: 100%;
-    line-height: 1
+    width: 70%;
+    max-width: 70%;
+    line-height: 0
 }
 
     [type=color]:hover, [type=date]:hover, [type=datetime-local]:hover, [type=datetime]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=time]:hover, [type=url]:hover, [type=week]:hover, select:hover, textarea:hover {
@@ -623,4 +632,6 @@ caption {
         width: 100%
     }
 }
+
+input[name='signature']{padding: .75rem }
 /*# sourceMappingURL=main.css.map */
