@@ -1,14 +1,14 @@
 This is the Runtime Terror Signature Management Add-In for Outlook
 
-This add in enables a user to load speciic databases, create, store, insert, insert random, remove a selection, or remove all signatures.
+This add in enables a user to load specific databases, create, search, insert, and remove signatures from the selected database.
 
-To start, the user should Load Work Signatures or Load Personal Signatures. By taking this step first, this ensures the user can work out of the database selected. 
+To start, the user should "Load Work Signatures" or "Load Personal Signatures". By taking this step first, this ensures the user can work out of the database selected. 
 
 After a database has been selected, the user can create a signature by providing a signature in the "Enter New Signature" text box. Once the user has entered the full signature they'd like to store, the signature can be stored by selecting "Store Signature". This stores the signature in the the database which they are currently viewing.
 
-The user can then utilize the "Search or Select for an Available Signatures" drop down to find a stored signature. This drop down can be searched both by typing or by manually selecting from the drop down. Once a selection has been made, the user can insert that signature by selecting "Insert Selection".
+The user can then utilize the "Search or Select for Stored Signatures" drop down to find a previously stored signature. This drop down can be searched both by typing or by manually selecting from the drop down. Once a selection has been made, the user can insert that signature by selecting "Insert Selection". If the user would like to insert a random signature, they can select "Insert Random" and the signature will be selected on their behalf. 
 
-Beneath the Search or Select drop down, the user can Insert Random, Remove Selection, and Remove All available signatures for the database that is currently being viewed. 
+Finally, the user can remove signatures by using "Remove Selection" which removes the selection made in the "Search or Select for Stored Signatures" drop down or "Remove All" to remove all signatures from the database they are currently viewing. 
 
 
 # Office-Addin-TaskPane-JS
